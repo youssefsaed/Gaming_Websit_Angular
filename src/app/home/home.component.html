@@ -1,0 +1,41 @@
+<div class="container-fluid mt-5">
+    <div class="bg-home rounded">
+        <div class="layer text-center rounded">
+            <h2>Find & track the best <span>free-to-play</span> games!</h2>
+            <p>Track what you've played and search for what to play next! Plus get free premium loot!</p>
+            <button class="rounded"><a routerLink="/all">browes Game</a></button>
+          </div>
+
+    </div>
+ 
+</div>
+
+<div class="container p-4">
+    <div class="my-3">
+        <i class="fa-solid fa-gamepad me-1 "></i> <h3 class="d-inline">Personalized Recommendations</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mb-2">
+            <img class="w-100" [routerLink]="['/gameDetails',GenshinImpact.id]" [src]="GenshinImpact.thumbnail" [alt]="GenshinImpact.title">
+            <div class="d-flex justify-content-between align-items-center body-game p-2">
+                <h5 class="m-0">{{GenshinImpact.title}}</h5>
+                <div class="free-home rounded">free</div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-2">
+            <img class="w-100" [routerLink]="['/gameDetails',Valorant.id]" [src]="Valorant.thumbnail" [alt]="Valorant.title">
+            <div class="d-flex justify-content-between align-items-center body-game p-2">
+                <h5 class="m-0">{{Valorant.title}}</h5>
+                <div class="free-home rounded">free</div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-2">
+            <img class="w-100" [routerLink]="['/gameDetails',ApexLegends.id]" [src]="ApexLegends.thumbnail" [alt]="ApexLegends.title">
+            <div class="d-flex justify-content-between align-items-center body-game p-2">
+                <h5 class="m-0">{{ApexLegends.title}}</h5>
+                <div class="free-home rounded">free</div>
+            </div>
+        </div>
+    </div>
+</div>
+

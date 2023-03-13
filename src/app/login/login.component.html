@@ -1,0 +1,39 @@
+<div class="container p-5 ">
+    <div *ngIf="loginError" class="exist">
+        {{loginError}}
+    </div>
+    <div class="row">
+        <div class="col-md-6 p-0">
+            <img src="../../assets/images/spider_man bg.jpg" class="w-100" alt="">
+        </div>
+        <div class="col-md-6 input-box">
+            <form [formGroup]="loginForm" (ngSubmit)="submitLoginForm(loginForm)">
+                <div class="d-flex justify-content-center">
+                    <img src="../../assets/images/logo.png" class="w-25" alt="logo">
+                </div>
+                <h2 class="text-center my-3">Log in to GameOver</h2>
+                <div class="row">
+        
+                    <div class="col-md-12 my-2"><input formControlName="email" type="text" placeholder="Email Address" class=" form-control">
+                        <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched ">
+                            <div class="invalid" *ngIf="loginForm.get('email')?.getError('required')">required</div>
+                            <div class="invalid" *ngIf="loginForm.get('email')?.getError('email')">email not valid</div>
+
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-12 my-2"><input formControlName="password" type="password" placeholder="Password" class=" form-control">
+                        <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched ">
+                            <div class="invalid" *ngIf="loginForm.get('password')?.getError('required')">required</div>
+                            <div class="invalid" *ngIf="loginForm.get('password')?.getError('pattern')">Invalid password</div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-12 my-2"><button [disabled]="loginForm.invalid" type="submit" class=" form-control">Create Account</button></div>
+                    <div class="text-center">Not a member yet? <a class=" text-decoration-none" routerLink="/register">Create Account</a></div>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

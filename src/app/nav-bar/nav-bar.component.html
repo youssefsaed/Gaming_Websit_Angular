@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg bg-black navbar-dark nav-shadow">
+    <div class="container-fluid">
+      <a class="navbar-brand   logo  " ><img  src="../../assets/images/logo.png">GameOver</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto  mb-2 mb-lg-0">
+          <li *ngIf="login" class="nav-item">
+            <a  class="nav-link active" routerLink="home" aria-current="page" >Home</a>
+          </li>
+          <li *ngIf="login" class="nav-item">
+            <a class="nav-link" routerLink="all" >All</a>
+          </li>
+
+          <li *ngIf="login" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"   role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              platforme
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" routerLink="Platforms/pc" >pc</a></li>
+              <li><a class="dropdown-item" routerLink="Platforms/browser" >browser</a></li>
+            </ul>
+          </li>
+
+          <li *ngIf="login" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              sort-by
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" routerLink="sort-by/release-date" >release-date</a></li>
+              <li><a class="dropdown-item" routerLink="sort-by/popularity" >popularity</a></li>
+              <li><a class="dropdown-item" routerLink="sort-by/alphabetical" >alphabetical</a></li>
+              <li><a class="dropdown-item" routerLink="sort-by/relevance" >relevance</a></li>
+            </ul>
+          </li>
+       
+        
+          <li *ngIf="login" class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"   role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              categories
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" routerLink="Categories/racing" >racing</a></li>
+              <li><a class="dropdown-item" routerLink="Categories/sports" >sports</a></li>
+              <li><a class="dropdown-item" routerLink="Categories/social" >social</a></li>
+              <li><a class="dropdown-item" routerLink="Categories/shooter" >shooter</a></li>
+              <li><a class="dropdown-item" routerLink="Categories/open-world" >open-world</a></li>
+              <li><a class="dropdown-item" routerLink="Categories/zombie" >zombie</a></li>
+              <li><a class="dropdown-item" routerLink="Categories/fantasy" >fantasy</a></li>
+              <li><a class="dropdown-item" routerLink="Categories/action-rpg" >action-rpg</a></li>
+              <li><a class="dropdown-item" routerLink="Categories/action" >action</a></li>
+              <li><a class="dropdown-item" routerLink="Categories/flight" >flight</a></li>
+              <li><a class="dropdown-item" routerLink="Categories/battle-royale" >battle-royale</a></li>
+            </ul>
+          </li>
+         
+          
+         
+        </ul>
+        <a *ngIf="!login" routerLink="login" class="mx-2 text-login">Login</a>
+        <button *ngIf="!login" class="btn-join mx-2 rounded"><a routerLink="register">join free</a></button>
+        <button (click)="logOut()" *ngIf="login" class="btn-join mx-2 rounded"><a routerLink="register">log Out</a></button>
+      
+      </div>
+    </div>
+  </nav>

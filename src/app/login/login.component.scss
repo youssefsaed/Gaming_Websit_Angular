@@ -1,0 +1,51 @@
+$red:#f80136;
+$secondry:#fa4904;
+$secondaryOrange_color:#fa4904;
+$blue:#0024B3;
+$secondryBlue:#0b38ee;
+
+
+
+.input-box
+{
+    background-color:black;
+    color: #0024B3;
+
+}
+.input-box input
+{
+    
+   border: 1px  solid;
+   outline:none !important;
+    
+    
+}
+input:focus
+{
+    outline: none !important;
+}
+button
+{
+    &:hover
+    {
+        background-color: $secondryBlue;
+    }
+    background-color: $blue;
+    color: #fff;
+    border: none;
+    transition: all 0.5s;
+}
+.invalid
+{
+    
+    color: $red;
+    border-radius: 5px;
+    
+}
+.exist
+{
+    background-color: $blue;
+    text-align: center;
+    color: $red;
+    border-radius: 5px;
+}

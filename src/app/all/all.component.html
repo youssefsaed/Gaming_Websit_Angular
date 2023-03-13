@@ -1,0 +1,33 @@
+<div class="container p-5">
+    <div class="row g-4">
+        <div *ngFor="let game of games" class="col-md-3" [routerLink]="['/gameDetails',game.id]">
+            <div class="shadow-custom rounded-bottom">
+                <img  [src]="game.thumbnail" class="w-100" [alt]="game.title">
+                <div class="body-card rounded-bottom  p-2">
+                    <div class="d-flex justify-content-between align-items-center ">
+                        <h2 class="h5 m-0">{{game.title|slicetitle|titlecase}}</h2>
+                        <div class="free rounded">free</div>
+                    </div>
+                    <div class="mt-1">{{game.short_description|sliceDescription}}</div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <i class="fa-regular fa-square-plus "></i>
+                        <div class="d-flex align-items-center">
+                            <div class="genre rounded text-center m-0 me-2 ">{{game.genre}}</div>
+                            <div class=" rounded my-1 text-end h6"*ngIf="game.platform=='PC (Windows)'"><i class={{iconPc}}></i></div>
+                            <div class=" rounded my-1 text-end h6 "*ngIf="game.platform=='Web Browser'"><i class={{iconBrowser}}></i></div>  
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+
+    </div>
+    <div class="d-flex justify-content-center mt-4">
+        <button class="btn-more rounded" (click)="moreGames()" >More Games <i class="fa-solid fa-angle-right"></i></button>
+        <!-- <button (click)="back()">brev</button> -->
+    </div>
+    
+    
+</div>

@@ -1,0 +1,40 @@
+$red:#f80136;
+$secondry:#fa4904;
+$secondaryOrange_color:#fa4904;
+$blue:#0024B3;
+$secondryBlue:#0b38ee;
+.logo
+{
+    width: 20%;
+    font-family: 'Rubik Glitch', cursive
+}
+.logo img
+{
+    width: 75px;
+}
+
+.nav-shadow
+{
+    box-shadow: 1px 1px 20px $blue ;
+}
+.text-login
+{
+    &{
+        color: $secondryBlue;
+    }
+    color: $blue;
+}
+.btn-join
+{
+    &{
+        color: $secondryBlue;
+    }
+    border: 1px solid $blue ;
+    background-color: transparent;
+    padding: 5px;
+}
+a
+{
+    text-decoration: none;
+    text-decoration-style: none;
+}

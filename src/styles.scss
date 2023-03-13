@@ -1,0 +1,64 @@
+/* You can add global styles to this file, and also import other style files */
+$blue:#0024B3;
+$secondryBlue:#0b38ee;
+$bs-gray-900:#212529;
+$bs-dark: #212529;
+$black:#0D0D0D;
+$bs-gray-600: #6c757d;
+body
+{
+    background-color:$black;
+    color: gray;
+}
+
+.free
+{
+    background-color:$secondryBlue;
+    padding: 5px;
+    color: #fff;
+}
+.body-card
+{
+    background-color: $bs-dark;
+    
+}
+.col-md-3:hover .shadow-custom
+{
+    transform: scale(1.1,1.1);
+
+}
+.fa-square-plus
+{
+    cursor: pointer;
+}
+.genre
+{
+    background-color: $secondryBlue;
+    font-size: 0.9rem;
+    color: #fff;
+}
+.fa-square-plus
+{
+    font-size: 1.5rem;
+    color: $bs-gray-600;
+}
+.shadow-custom
+{
+    // box-shadow: 0px 0.5px  15px  $secondryBlue;
+    // box-shadow: 0px 15px 10px -15px blue; 
+    // box-shadow: 0 5px 5px -5px blue;
+    box-shadow: 0 8px 6px -6px $secondryBlue;
+    transition: transform 0.5s;
+}
+
+.btn-more
+{
+    background-color:$blue ;
+    color: #fff;
+    padding: 10px 30px;
+    transition: background-color 0.5s;
+}
+.btn-more:hover
+{
+    background-color: $secondryBlue;
+}
