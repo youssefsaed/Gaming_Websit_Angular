@@ -18,9 +18,9 @@ export class RegisterComponent implements OnInit {
   registryForm=new FormGroup({
     first_name:new FormControl(null,[Validators.minLength(3),Validators.maxLength(10),Validators.required]),
     last_name:new FormControl(null,[Validators.minLength(3),Validators.maxLength(10),Validators.required]),
-    email:new FormControl(null,[Validators.email,Validators.required]),
-    password:new FormControl(null,[Validators.pattern('[A-ZA-Z0-9]{5,}[^*&%$#@!/:;]'),Validators.required]),
-    age:new FormControl(null,[Validators.min(10),Validators.max(70),Validators.required])
+    email:new FormControl(null,[Validators.pattern('^[a-z0-9._-]+@(yahoo|gmail|outlook)+\.com$'),Validators.required]),
+    password:new FormControl(null,[Validators.pattern('^[a-zA-Z0-9]{5,20}$'),Validators.required]),
+    age:new FormControl(null,[Validators.min(10),Validators.max(90),Validators.required])
   })
 
   submitRegistrForm(_registryForm:FormGroup)
@@ -28,15 +28,14 @@ export class RegisterComponent implements OnInit {
     
     this._AuthService.sendFormRegistr(_registryForm.value).subscribe((response)=>
     {
+      console.log(response);
+      
       if(response.message=='success')
       {
         this._Router.navigate(['login'])
       }
-      else
-      {
-       this.registrError=response.errors.email.message
-      }
-
+    },(err)=>{
+      this.registrError=err.error.message
     })
 
   }

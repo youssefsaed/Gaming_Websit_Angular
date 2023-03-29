@@ -30,7 +30,7 @@
                     <div class="col-md-12 my-2"><input formControlName="email" type="text" placeholder="Email Address" class=" form-control">
                         <div *ngIf="registryForm.get('email')?.errors && registryForm.get('email')?.touched ">
                             <div class="invalid" *ngIf="registryForm.get('email')?.getError('required')">required</div>
-                            <div class="invalid" *ngIf="registryForm.get('email')?.getError('email')">email not valid</div>
+                            <div class="invalid" *ngIf="registryForm.get('email')?.getError('pattern')">email not valid</div>
 
                         </div>
                     </div>
@@ -42,7 +42,7 @@
 
                         </div>
                     </div>
-                    <div class="col-md-12 my-2"><input formControlName="password" type="password" placeholder="Password" class=" form-control">
+                    <div class="col-md-12 my-2"><input formControlName="password" type="password" placeholder="Password" class=" form-control" maxlength="20">
                         <div *ngIf="registryForm.get('password')?.errors && registryForm.get('password')?.touched ">
                             <div class="invalid" *ngIf="registryForm.get('password')?.getError('required')">required</div>
                             <div class="invalid" *ngIf="registryForm.get('password')?.getError('pattern')">Invalid password</div>

@@ -12,35 +12,35 @@ import { GamesService } from '../games.service';
   styleUrls: ['./gamedetails.component.scss']
 })
 export class GamedetailsComponent implements OnInit {
-gameId:string|null=''
-storage:string=''
-processor:string=''
-os:string=''
-memory:string=''
-graphics:string=''
-gameDetails:any
-screen:any
-  constructor(private _ActivatedRoute:ActivatedRoute, private _GamesService:GamesService) { }
+  gameId: string | null = ''
+  storage: string = ''
+  processor: string = ''
+  os: string = ''
+  memory: string = ''
+  graphics: string = ''
+  gameDetails: any
+  screen: any
+  constructor(private _ActivatedRoute: ActivatedRoute, private _GamesService: GamesService) { }
 
   ngOnInit(): void {
-   this.gameId= this._ActivatedRoute.snapshot.paramMap.get('id')
+    this.gameId = this._ActivatedRoute.snapshot.paramMap.get('id')
 
-   this._GamesService.GameIdDetails(this.gameId).subscribe((response)=>{
+    this._GamesService.GameIdDetails(this.gameId).subscribe((response) => {
 
-   this.gameDetails=response
-   this.screen=response.screenshots
-
-
-   
-   this.storage=response.minimum_system_requirements.storage
-  this.processor= response.minimum_system_requirements.processor
- this.os=response.minimum_system_requirements.os
-this.memory=response.minimum_system_requirements.memory
-this.graphics=response.minimum_system_requirements.graphics
+      this.gameDetails = response
+      this.screen = response.screenshots
 
 
-   
-   })
+
+      this.storage = response.minimum_system_requirements.storage
+      this.processor = response.minimum_system_requirements.processor
+      this.os = response.minimum_system_requirements.os
+      this.memory = response.minimum_system_requirements.memory
+      this.graphics = response.minimum_system_requirements.graphics
+
+
+
+    })
 
 
   }
@@ -52,16 +52,16 @@ this.graphics=response.minimum_system_requirements.graphics
     touchDrag: true,
     pullDrag: true,
     dots: false,
-    autoplay:true,
-    autoplayTimeout:3000,
+    autoplay: true,
+    autoplayTimeout: 3000,
     navSpeed: 700,
-    
+
     navText: ['', ''],
     responsive: {
       0: {
         items: 1
       },
-    
+
     },
     nav: false
   }

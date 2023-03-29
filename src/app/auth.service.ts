@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import {Observable, BehaviorSubject} from 'rxjs';
 import jwtDecode from 'jwt-decode';
 import { Router } from '@angular/router';
+import { url } from './baseUrl';
 
 
 
@@ -25,11 +26,11 @@ export class AuthService {
 
   sendFormRegistr(formValue:object):Observable<any>
   {
-   return this._HttpClient.post(`https://route-egypt-api.herokuapp.com/signup`,formValue)
+   return this._HttpClient.post(`${url}${'signUp'}`,formValue)
   }
   sendFormLogin(formValue:object):Observable<any>
   {
-   return this._HttpClient.post(`https://route-egypt-api.herokuapp.com/signin`,formValue)
+   return this._HttpClient.post(`${url}${'logIn'}`,formValue)
   }
   decodeData()
   {
